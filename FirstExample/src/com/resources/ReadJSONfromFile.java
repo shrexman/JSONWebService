@@ -37,8 +37,10 @@ public class ReadJSONfromFile {
 	 * @throws IOException
 	 */
 	public static String getResult(double cGPA) throws FileNotFoundException, IOException {
-		String json = jsonParser.FileReader.loadFileIntoString("json/StudentResult.json", "utf-8");
-    	
+		String json = FileReader.loadFileIntoString("json/StudentResult.json", "utf-8");
+    	if(json == null || json.trim().length()<1){
+    		return null;
+    	}
     	JSONArray status = JSONArray.fromObject(json);
         
         for(int i = 0; i < status.size(); i++)

@@ -11,7 +11,7 @@ public class Methods {
 	
 	public static JSONObject extractJson() throws FileNotFoundException,
 			IOException {
-		String json = jsonParser.FileReader.loadFileIntoString("json/StudentResult.json", "utf-8");
+		String json = FileReader.loadFileIntoString("json/StudentResult.json", "utf-8");
 	    JSONObject search = JSONObject.fromObject(json);
 		return search;
 	}

@@ -14,7 +14,7 @@ import javax.ws.rs.Produces;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-@Path("Zied")
+@Path("/Zied")
 public class Hello extends ReadJSONfromFile{
 	
 //	@GET
@@ -43,11 +43,20 @@ public class Hello extends ReadJSONfromFile{
 //		
 //	}
 
+	@GET
+	@Path("/get")
+	@Produces("application/json")
+	public String getProductInJSON() {
+
+		
+		return "[]";
+
+	}
 	///////
 	@SuppressWarnings("static-access")
 	@GET
-	@Path("getResult&{GPA}")
-	@Produces("text/json")
+	@Path("/getResult/{GPA}")
+	@Produces("application/json")
 	public String getResultfinal(@PathParam("GPA") double GPA) throws FileNotFoundException, IOException {
 	
 		
