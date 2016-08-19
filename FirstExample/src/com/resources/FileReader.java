@@ -20,7 +20,7 @@ public class FileReader {
 	    	
 	        String res = "";
 	        try {
-	        	res = IOUtils.toString( FileReader.class.getClass().getClassLoader().getResourceAsStream(filePath), fileEncoding);
+	        	res = IOUtils.toString( FileReader.class.getResourceAsStream(filePath), fileEncoding);
 	        }catch(Exception ex){
 	        	ex.printStackTrace();
 	        }
